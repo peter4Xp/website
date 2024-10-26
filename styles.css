@@ -1,0 +1,567 @@
+* {
+    box-sizing: border-box; 
+    max-width: 100%;
+        
+}
+
+body {
+    height: 100%; 
+    margin: 0; 
+    width: 100%;
+    
+}
+
+header {
+    background-color: hsl(234, 95%, 41%);
+    color: rgb(244, 243, 247);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px; 
+    width: 100vw;
+   
+}
+.logo-title {
+    display: flex; /* Align logo and title horizontally */
+    align-items: center; /* Center align logo and title vertically */
+    gap: 1px; /* Space between logo and title */
+   
+}
+
+.logo {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+nav {
+    flex-grow: 1; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+    display: flex;
+    justify-content: flex-end; 
+}
+
+nav ul li {
+    margin: 0 15px; 
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+/* Container styling for .hero */
+.hero {
+    width: 100%;
+    height: 700px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #353333;
+    color: rgb(248, 246, 246);
+    text-align: center;
+    font-size: 2em;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slideshow background with seamless looping */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%; /* Width to fit three images side by side */
+    height: 100%;
+    background-image: url('images/young1.jpg'), url('images/young2.jpg'), url('images/young4.jpg') url('images/young5.jpg')
+    url('images/young6.jpg') url('images/young7.jpg') url('images/young8.jpg') url('images/young9.jpg') url('images/youngg2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left, center, right;
+    animation: slide 30s infinite linear; /* Adjusted speed */
+    z-index: -1; /* Ensures text stays on top */
+}
+
+/* Keyframes for seamless looping */
+@keyframes slide {
+    0%, 25% { transform: translateX(0); }
+    30%, 55% { transform: translateX(-100%); }
+    60%, 85% { transform: translateX(-200%); }
+    90%, 100% { transform: translateX(0); } /* Loop back to the first image */
+}
+
+/* Styling for the h1 text */
+.hero h1 {
+    z-index: 1;
+    background: rgba(12, 12, 12, 0.5); /* Optional text background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* Hero Section Styling */
+.hero {
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-end; /* Align items at the bottom */
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-bottom: 70px; /* Space from the bottom */
+}
+.hero h1 {
+    margin-bottom: 100px; /* Adjust this value to move the text up */
+    /* Optional: Add some top margin for a better position */
+    margin-top: 10px; 
+    z-index: 1; /* Ensures the text stays above the background images */
+}
+
+
+/* Center Buttons */
+.buttons {
+    margin-bottom: 20px; /* Space below the buttons */
+}
+
+/* Button Styles */
+.btn {
+    background-color: hsl(120, 3%, 7%); /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding around text */
+    margin: 10px; /* Margin between buttons */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    background-color: hsl(134, 98%, 33%); /* Darker shade on hover */
+}
+
+/* Form Section Styling */
+.form-section {
+    display: none; /* Hide by default, will show on button click */
+    margin: 20px auto; /* Centered */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 400px; /* Limit form width */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Form Heading */
+.form-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Form Label and Input Styles */
+.form-section label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.form-section input {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button Styles */
+.form-section button {
+    padding: 10px 15px;
+    background-color: #0c0294; /* Submit button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.form-section button:hover {
+    background-color: #218838; /* Darker shade on hover */
+}
+
+
+/* Basic image styling */
+img {
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+/* Hover effect to move/zoom images */
+img:hover {
+    transform: scale(1.1) translateX(10px); /* Slight zoom and move right */
+}
+
+
+    
+
+
+#about {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center; /* Center-align text */
+}
+
+#about h2 {
+    text-transform: uppercase; /* Convert text to uppercase */
+    color: #007BFF; /* Set heading color to blue */
+    margin-bottom: 15px; /* Add space below the heading */
+}
+
+.about-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Align paragraph to the right */
+}
+
+.about-content p {
+    font-weight: bold; /* Make paragraph text bold */
+    color: black; /* Set paragraph color to black */
+    max-width: 600px; /* Limit width for better readability */
+}
+
+.about-images {
+    display: flex; /* Use flexbox to align images horizontally */
+    justify-content: space-around; /* Space out images evenly */
+    flex-wrap: wrap; /* Wrap if screen is too small */
+    margin-top: 20px; /* Space above the image section */
+}
+
+.about-item {
+    width: 30%; /* Each item takes 30% of the container */
+    margin: 10px; /* Space between items */
+}
+
+.about-item img {
+    width: 100%; /* Full width of the item */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners for images */
+}
+
+.about-item h3 {
+    margin-top: 10px; /* Space above headings */
+    color: #007BFF; /* Heading color */
+}
+
+.about-item p {
+    margin-top: 5px; /* Space above descriptions */
+    color: #555; /* Description color */
+}
+
+#club-officials {
+    padding: 20px;
+    background-color: #f1f1f1; /* Light background for contrast */
+    text-align: center; /* Center-align text */
+}
+
+#club-officials h2 {
+    text-transform: uppercase; /* Convert text to uppercase */
+    color: #007BFF; /* Set heading color to blue */
+    margin-bottom: 15px; /* Add space below the heading */
+}
+
+.officials-images {
+    display: flex; /* Use flexbox to align images horizontally */
+    justify-content: space-around; /* Space out images evenly */
+    flex-wrap: wrap; /* Wrap if screen is too small */
+    margin-top: 20px; /* Space above the image section */
+}
+
+.official-item {
+    width: 30%; /* Each item takes 30% of the container */
+    margin: 10px; /* Space between items */
+}
+
+.official-item img {
+    width: 100%; /* Full width of the item */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners for images */
+}
+
+.official-item h3 {
+    margin-top: 10px; /* Space above headings */
+    color: #007BFF; /* Heading color */
+}
+
+.official-item p {
+    margin-top: 5px; /* Space above descriptions */
+    color: #555; /* Description color */
+}
+
+.chat-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    margin: auto;
+}
+
+#chat-box {
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#chat-input {
+    width: 70%;
+}
+
+/* Centering the blog heading and paragraph */
+.blog-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.blog-intro h3, .blog-intro p {
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Grid gallery layout */
+.blog-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 8 equal columns */
+    width: 100vw; /* Full viewport width */
+    gap: 20px; /* Space between items */
+    padding: 10px 0;
+}
+
+.blog-item {
+    text-align: center;
+}
+
+.blog-item h4 {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.blog-item img {
+    width: 100%; /* Full width within each grid cell */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+.blog-item p {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Centering the intro heading and paragraph */
+.contact-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-intro h3 {
+    font-size: 2em;
+    color: #333;
+}
+
+.contact-intro p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+/* Contact content layout */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info, .contact-map {
+    width: 100%;
+    text-align: center;
+}
+
+/* Map placeholder styling */
+#map {
+    width: 100%;
+    height: 300px;
+    background-color: #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.contact-map iframe {
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Consistent height */
+    border-radius: 8px; /* Rounded corners for a cleaner look */
+    border: 0; /* Remove default border */
+}
+
+footer {
+    background-color: hsl(234, 95%, 41%); /* Change background color to your choice */
+    color: white; /* Set text color */
+    text-align: left; /* Align text to the left */
+    padding: 30px; /* Increase padding for more height */
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width */
+    bottom: 0; /* Align at the bottom */
+    left: 0; /* Align to the left */
+    margin-top: auto; /* Allow footer to stay at the bottom */
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out left and right sections */
+}
+
+.get-in-touch, .contact-us {
+    width: 48%; /* Control width for left and right sections */
+}
+
+.get-in-touch h3, .contact-us h2 {
+    margin-bottom: 15px; /* Space below headings */
+}
+
+.get-in-touch ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.get-in-touch li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.get-in-touch a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.get-in-touch a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.contact-info {
+    margin-top: 10px; /* Space above contact info */
+}
+
+.info-item {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center icon and text vertically */
+    margin-bottom: 10px; /* Space between info items */
+}
+
+.icon {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.socials {
+    margin-top: 15px; /* Space above social icons */
+}
+
+.social-icon {
+    width: 30px; /* Set width for social icons */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between icons */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    transition: transform 0.2s; /* Smooth transition */
+}
+
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 600px; /* Limit the width */
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Height of the chat container */
+}
+
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+}
+
+.messages {
+    flex: 1; /* Allow this section to grow */
+    padding: 10px;
+    overflow-y: auto; /* Scrollable if messages overflow */
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%; /* Limit message width */
+}
+
+.sender {
+    align-self: flex-end; /* Align sender messages to the right */
+    background-color: #007bff;
+    color: white;
+}
+
+.receiver {
+    align-self: flex-start; /* Align receiver messages to the left */
+    background-color: #e9e9e9;
+    color: black;
+}
+
+.message-content {
+    word-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex: 1; /* Allow input to grow */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.chat-input button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
