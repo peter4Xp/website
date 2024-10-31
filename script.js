@@ -1,3 +1,29 @@
+// JavaScript for dynamic elements
+
+// Toggle the navigation menu on mobile view
+document.getElementById("menu-toggle").addEventListener("click", function() {
+        const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("show");
+  });
+  
+  // Adjust the layout or styles dynamically based on screen size
+  function checkScreenSize() {
+    if (window.innerWidth < 768) {
+      console.log("Screen is in mobile view");
+    } else if (window.innerWidth < 1024) {
+      console.log("Screen is in tablet view");
+    } else {
+      console.log("Screen is in desktop view");
+    }
+  }
+  
+  // Event listener for screen resize
+  window.addEventListener("resize", checkScreenSize);
+  
+  // Initial check for screen size on page load
+  checkScreenSize();
+  
+
 function sendMessage() {
     const input = document.getElementById("chat-input");
     const chatBox = document.getElementById("chat-box");
