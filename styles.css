@@ -1,20 +1,20 @@
 * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
     max-width: 100%;
     padding: 0;
     margin: 0;
-        
 }
 
 body {
-    height: 100%; 
-    margin: 0; 
+    height: 100%;
+    margin: 0;
     width: 100%;
-    
 }
+
 /* Navbar styling */
 nav {
-    background: #007BFF; /* Navbar background color */
+    background: #007bff;
+    /* Navbar background color */
     width: 100%;
     height: 80px;
     display: flex;
@@ -23,18 +23,23 @@ nav {
     padding: 0 20px;
     box-sizing: border-box;
     position: relative;
-    z-index: 10; /* Ensure navbar is above other content */
+    z-index: 10;
+    /* Ensure navbar is above other content */
 }
 
 /* Logo and title styling */
 .logo-title {
-    display: flex; /* Align logo and title horizontally */
-    align-items: center; /* Center align vertically */
-    gap: 10px; /* Space between logo and title */
+    display: flex;
+    /* Align logo and title horizontally */
+    align-items: center;
+    /* Center align vertically */
+    gap: 10px;
+    /* Space between logo and title */
 }
 
 .logo {
-    width: 50px; /* Adjust width as needed */
+    width: 50px;
+    /* Adjust width as needed */
     height: auto;
 }
 
@@ -62,7 +67,8 @@ nav ul li a {
 }
 
 /* Hover and active link styling */
-a.active, nav ul li a:hover {
+a.active,
+nav ul li a:hover {
     background: #000;
 }
 
@@ -75,30 +81,38 @@ a.active, nav ul li a:hover {
     font-size: 30px;
     color: white;
     cursor: pointer;
-    display: none; /* Hide on larger screens */
+    display: none;
+    /* Hide on larger screens */
 }
 
 /* Responsive styling for screens up to 858px */
 @media (max-width: 858px) {
     .checkbtn {
-        display: block; /* Show menu icon */
+        display: block;
+        /* Show menu icon */
     }
 
     /* Partial-screen dropdown menu for mobile */
     nav ul {
         position: fixed;
-        top: 80px; /* Position below navbar */
+        top: 80px;
+        /* Position below navbar */
         left: -100%;
         width: 100%;
-        height: 50vh; /* Use only half the viewport height */
-        background-color: #007BFF; /* Same color as navbar */
+        height: 50vh;
+        /* Use only half the viewport height */
+        background-color: #007bff;
+        /* Same color as navbar */
         flex-direction: column;
         align-items: center;
         justify-content: center;
         transition: all 0.5s;
-        z-index: 20; /* Ensure dropdown menu is on top */
-        overflow-y: auto; /* Enable scrolling if contents exceed height */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+        z-index: 20;
+        /* Ensure dropdown menu is on top */
+        overflow-y: auto;
+        /* Enable scrolling if contents exceed height */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Optional shadow for effect */
     }
 
     nav ul li {
@@ -112,24 +126,24 @@ a.active, nav ul li a:hover {
     }
 
     /* Change hover color */
-    a.active, nav ul li a:hover {
+    a.active,
+    nav ul li a:hover {
         background-color: transparent;
         color: #000;
     }
 
     /* Toggle menu on checkbox check */
-    #check:checked ~ ul {
-        left: 0; /* Slide menu in from the left */
+    #check:checked~ul {
+        left: 0;
+        /* Slide menu in from the left */
     }
 }
-
-
-
 
 /* Container styling for .hero */
 .hero {
     width: 100%;
-    height: 700px; /* Adjust as needed */
+    height: 700px;
+    /* Adjust as needed */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,86 +161,127 @@ a.active, nav ul li a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 300%; /* Width to fit three images side by side */
+    width: 300%;
+    /* Width to fit three images side by side */
     height: 100%;
-    background-image: url('images/young1.jpg'), url('images/young2.jpg'), url('images/young4.jpg') url('images/young5.jpg')
-    url('images/young6.jpg') url('images/young7.jpg') url('images/young8.jpg') url('images/young9.jpg') url('images/youngg2.jpg');
+    background-image: url("images/young1.jpg"), url("images/young2.jpg"),
+        url("images/young4.jpg") url("images/young5.jpg") url("images/young6.jpg") url("images/young7.jpg") url("images/young8.jpg") url("images/young9.jpg") url("images/youngg2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left, center, right;
-    animation: slide 30s infinite linear; /* Adjusted speed */
-    z-index: -1; /* Ensures text stays on top */
+    animation: slide 30s infinite linear;
+    /* Adjusted speed */
+    z-index: -1;
+    /* Ensures text stays on top */
 }
 
 /* Keyframes for seamless looping */
 @keyframes slide {
-    0%, 25% { transform: translateX(0); }
-    30%, 55% { transform: translateX(-100%); }
-    60%, 85% { transform: translateX(-200%); }
-    90%, 100% { transform: translateX(0); } /* Loop back to the first image */
+
+    0%,
+    25% {
+        transform: translateX(0);
+    }
+
+    30%,
+    55% {
+        transform: translateX(-100%);
+    }
+
+    60%,
+    85% {
+        transform: translateX(-200%);
+    }
+
+    90%,
+    100% {
+        transform: translateX(0);
+    }
+
+    /* Loop back to the first image */
 }
 
 /* Styling for the h1 text */
 .hero h1 {
     z-index: 1;
-    background: rgba(12, 12, 12, 0.5); /* Optional text background */
+    background: rgba(12, 12, 12, 0.5);
+    /* Optional text background */
     padding: 10px;
     border-radius: 5px;
 }
 
-
 /* Hero Section Styling */
 .hero {
     width: 100%;
-    height: 600px; /* Adjust height as needed */
+    height: 600px;
+    /* Adjust height as needed */
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: flex-end; /* Align items at the bottom */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
+    justify-content: flex-end;
+    /* Align items at the bottom */
     color: white;
     text-align: center;
     position: relative;
-    padding-bottom: 70px; /* Space from the bottom */
-}
-.hero h1 {
-    margin-bottom: 100px; /* Adjust this value to move the text up */
-    /* Optional: Add some top margin for a better position */
-    margin-top: 10px; 
-    z-index: 1; /* Ensures the text stays above the background images */
+    padding-bottom: 70px;
+    /* Space from the bottom */
 }
 
+.hero h1 {
+    margin-bottom: 100px;
+    /* Adjust this value to move the text up */
+    /* Optional: Add some top margin for a better position */
+    margin-top: 10px;
+    z-index: 1;
+    /* Ensures the text stays above the background images */
+}
 
 /* Center Buttons */
 .buttons {
-    margin-bottom: 20px; /* Space below the buttons */
+    margin-bottom: 20px;
+    /* Space below the buttons */
 }
 
 /* Button Styles */
 .btn {
-    background-color: hsl(120, 3%, 7%); /* Button background color */
-    color: white; /* Button text color */
-    padding: 10px 20px; /* Padding around text */
-    margin: 10px; /* Margin between buttons */
-    text-decoration: none; /* No underline */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s; /* Transition for hover effect */
+    background-color: hsl(120, 3%, 7%);
+    /* Button background color */
+    color: white;
+    /* Button text color */
+    padding: 10px 20px;
+    /* Padding around text */
+    margin: 10px;
+    /* Margin between buttons */
+    text-decoration: none;
+    /* No underline */
+    border-radius: 5px;
+    /* Rounded corners */
+    transition: background-color 0.3s;
+    /* Transition for hover effect */
 }
 
 /* Hover effect for buttons */
 .btn:hover {
-    background-color: hsl(134, 98%, 33%); /* Darker shade on hover */
+    background-color: hsl(134, 98%, 33%);
+    /* Darker shade on hover */
 }
 
 /* Form Section Styling */
 .form-section {
-    display: none; /* Hide by default, will show on button click */
-    margin: 20px auto; /* Centered */
+    display: none;
+    /* Hide by default, will show on button click */
+    margin: 20px auto;
+    /* Centered */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    max-width: 400px; /* Limit form width */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    max-width: 400px;
+    /* Limit form width */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Optional shadow */
 }
 
 /* Form Heading */
@@ -241,7 +296,8 @@ a.active, nav ul li a:hover {
 }
 
 .form-section input {
-    width: 100%; /* Full width */
+    width: 100%;
+    /* Full width */
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -251,47 +307,54 @@ a.active, nav ul li a:hover {
 /* Submit Button Styles */
 .form-section button {
     padding: 10px 15px;
-    background-color: #0c0294; /* Submit button color */
-    color: white; /* Button text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #0c0294;
+    /* Submit button color */
+    color: white;
+    /* Button text color */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
 }
 
 .form-section button:hover {
-    background-color: #218838; /* Darker shade on hover */
+    background-color: #218838;
+    /* Darker shade on hover */
 }
-
 
 /* Basic image styling */
 img {
-    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    transition: transform 0.3s ease;
+    /* Smooth transition for the hover effect */
 }
 
 /* Hover effect to move/zoom images */
 img:hover {
-    transform: scale(1.1) translateX(10px); /* Slight zoom and move right */
+    transform: scale(1.1) translateX(10px);
+    /* Slight zoom and move right */
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-
-    
-
 /* About Section Styling */
 #about {
     padding: 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
+    background-color: #f9f9f9;
+    /* Light background for contrast */
     text-align: center;
 }
 
 #about h2 {
     text-transform: uppercase;
-    color: #007BFF;
+    color: #007bff;
     margin-bottom: 15px;
-    font-size: 2em; /* Larger heading for emphasis */
+    font-size: 2em;
+    /* Larger heading for emphasis */
 }
 
 .about-content {
@@ -318,7 +381,8 @@ img:hover {
 }
 
 .about-item {
-    width: 30%; /* 30% width on larger screens */
+    width: 30%;
+    /* 30% width on larger screens */
     background: white;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -334,7 +398,7 @@ img:hover {
 
 .about-item h3 {
     margin-top: 10px;
-    color: #007BFF;
+    color: #007bff;
     font-size: 1.2em;
 }
 
@@ -347,13 +411,15 @@ img:hover {
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     .about-item {
-        width: 45%; /* 2 items per row on medium screens */
+        width: 45%;
+        /* 2 items per row on medium screens */
     }
 }
 
 @media (max-width: 768px) {
     #about h2 {
-        font-size: 1.5em; /* Slightly smaller heading on tablets */
+        font-size: 1.5em;
+        /* Slightly smaller heading on tablets */
     }
 
     .about-content p {
@@ -361,7 +427,8 @@ img:hover {
     }
 
     .about-item {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
+        /* Full width on smaller screens */
     }
 
     .about-item h3 {
@@ -380,50 +447,68 @@ img:hover {
     }
 
     .about-item img {
-        height: 150px; /* Set a max height for images on very small screens */
+        height: 150px;
+        /* Set a max height for images on very small screens */
     }
 }
 
-
 #club-officials {
     padding: 20px;
-    background-color: #f1f1f1; /* Light background for contrast */
-    text-align: center; /* Center-align text */
+    background-color: #f1f1f1;
+    /* Light background for contrast */
+    text-align: center;
+    /* Center-align text */
 }
 
 #club-officials h2 {
-    text-transform: uppercase; /* Convert text to uppercase */
-    color: #007BFF; /* Set heading color to blue */
-    margin-bottom: 15px; /* Add space below the heading */
+    text-transform: uppercase;
+    /* Convert text to uppercase */
+    color: #007bff;
+    /* Set heading color to blue */
+    margin-bottom: 15px;
+    /* Add space below the heading */
 }
 
 .officials-images {
-    display: flex; /* Use flexbox to align images horizontally */
-    justify-content: space-around; /* Space out images evenly */
-    flex-wrap: wrap; /* Wrap if screen is too small */
+    display: flex;
+    /* Use flexbox to align images horizontally */
+    justify-content: space-around;
+    /* Space out images evenly */
+    flex-wrap: wrap;
+    /* Wrap if screen is too small */
     margin-top: 20px;
-    gap: 20px; /* Space above the image section */
+    gap: 20px;
+    /* Space above the image section */
 }
 
 .official-item {
-    width: 30%; /* Each item takes 30% of the container */
-    margin: 10px; /* Space between items */
+    width: 30%;
+    /* Each item takes 30% of the container */
+    margin: 10px;
+    /* Space between items */
 }
 
 .official-item img {
-    width: 100%; /* Full width of the item */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: rounded corners for images */
+    width: 100%;
+    /* Full width of the item */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* Optional: rounded corners for images */
 }
 
 .official-item h3 {
-    margin-top: 10px; /* Space above headings */
-    color: #007BFF; /* Heading color */
+    margin-top: 10px;
+    /* Space above headings */
+    color: #007bff;
+    /* Heading color */
 }
 
 .official-item p {
-    margin-top: 5px; /* Space above descriptions */
-    color: #555; /* Description color */
+    margin-top: 5px;
+    /* Space above descriptions */
+    color: #555;
+    /* Description color */
 }
 
 .chat-container {
@@ -451,7 +536,8 @@ img:hover {
     margin-bottom: 30px;
 }
 
-.blog-intro h3, .blog-intro p {
+.blog-intro h3,
+.blog-intro p {
     margin: 10px 0;
     color: #333;
 }
@@ -459,9 +545,12 @@ img:hover {
 /* Grid gallery layout */
 .blog-gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 8 equal columns */
-    width: 100vw; /* Full viewport width */
-    gap: 20px; /* Space between items */
+    grid-template-columns: repeat(4, 1fr);
+    /* 8 equal columns */
+    width: 100vw;
+    /* Full viewport width */
+    gap: 20px;
+    /* Space between items */
     padding: 10px 0;
 }
 
@@ -476,9 +565,12 @@ img:hover {
 }
 
 .blog-item img {
-    width: 100%; /* Full width within each grid cell */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: rounded corners */
+    width: 100%;
+    /* Full width within each grid cell */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* Optional: rounded corners */
 }
 
 .blog-item p {
@@ -516,7 +608,8 @@ img:hover {
     margin: 0 auto;
 }
 
-.contact-info, .contact-map {
+.contact-info,
+.contact-map {
     width: 100%;
     text-align: center;
 }
@@ -529,15 +622,22 @@ img:hover {
     border-radius: 8px;
     margin-top: 10px;
 }
+
 .contact-map iframe {
-    width: 100%; /* Full width of the container */
-    height: 300px; /* Consistent height */
-    border-radius: 8px; /* Rounded corners for a cleaner look */
-    border: 0; /* Remove default border */
+    width: 100%;
+    /* Full width of the container */
+    height: 300px;
+    /* Consistent height */
+    border-radius: 8px;
+    /* Rounded corners for a cleaner look */
+    border: 0;
+    /* Remove default border */
 }
+
 /* Footer Styling */
 footer {
-    background-color: hsl(234, 95%, 41%); /* Custom background color */
+    background-color: hsl(234, 95%, 41%);
+    /* Custom background color */
     color: white;
     text-align: left;
     padding: 20px;
@@ -554,22 +654,27 @@ footer {
 /* Footer Content Layout */
 .footer-content {
     display: flex;
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+    flex-wrap: wrap;
+    /* Wrap items on smaller screens */
     justify-content: space-between;
     gap: 20px;
     width: 100%;
-    max-width: 1200px; /* Center and limit width on larger screens */
+    max-width: 1200px;
+    /* Center and limit width on larger screens */
 }
 
 /* Sections */
 .get-in-touch,
 .contact-us {
-    flex: 1 1 45%; /* Flexible width for responsiveness */
-    min-width: 280px; /* Ensure minimum width for smaller screens */
+    flex: 1 1 45%;
+    /* Flexible width for responsiveness */
+    min-width: 280px;
+    /* Ensure minimum width for smaller screens */
     text-align: left;
 }
 
-.get-in-touch h3, .contact-us h2 {
+.get-in-touch h3,
+.contact-us h2 {
     margin-bottom: 15px;
     font-size: 1.3em;
 }
@@ -634,7 +739,8 @@ footer {
         align-items: center;
     }
 
-    .get-in-touch, .contact-us {
+    .get-in-touch,
+    .contact-us {
         width: 100%;
         text-align: center;
     }
@@ -649,7 +755,8 @@ footer {
         padding: 15px;
     }
 
-    .get-in-touch h3, .contact-us h2 {
+    .get-in-touch h3,
+    .contact-us h2 {
         font-size: 1.1em;
     }
 
@@ -663,7 +770,6 @@ footer {
     }
 }
 
-
 /* styles.css */
 body {
     margin: 0;
@@ -673,14 +779,16 @@ body {
 
 .chat-container {
     width: 100%;
-    max-width: 600px; /* Limit the width */
+    max-width: 600px;
+    /* Limit the width */
     margin: auto;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    height: 80vh; /* Height of the chat container */
+    height: 80vh;
+    /* Height of the chat container */
 }
 
 .chat-header {
@@ -693,32 +801,38 @@ body {
 }
 
 .messages {
-    flex: 1; /* Allow this section to grow */
+    flex: 1;
+    /* Allow this section to grow */
     padding: 10px;
-    overflow-y: auto; /* Scrollable if messages overflow */
+    overflow-y: auto;
+    /* Scrollable if messages overflow */
 }
 
 .message {
     margin: 10px 0;
     padding: 10px;
     border-radius: 8px;
-    max-width: 70%; /* Limit message width */
+    max-width: 70%;
+    /* Limit message width */
 }
 
 .sender {
-    align-self: flex-end; /* Align sender messages to the right */
+    align-self: flex-end;
+    /* Align sender messages to the right */
     background-color: #007bff;
     color: white;
 }
 
 .receiver {
-    align-self: flex-start; /* Align receiver messages to the left */
+    align-self: flex-start;
+    /* Align receiver messages to the left */
     background-color: #e9e9e9;
     color: black;
 }
 
 .message-content {
-    word-wrap: break-word; /* Ensure long words break to the next line */
+    word-wrap: break-word;
+    /* Ensure long words break to the next line */
 }
 
 .chat-input {
@@ -728,7 +842,8 @@ body {
 }
 
 .chat-input input {
-    flex: 1; /* Allow input to grow */
+    flex: 1;
+    /* Allow input to grow */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -745,6 +860,6 @@ body {
 }
 
 .chat-input button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
+    /* Darker shade on hover */
 }
-
