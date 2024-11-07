@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Join Us</title>
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+        <div class="logo-title">
+            <img src="images/LOGO1.png" width="450px" class="logo">
+            <h1>RCYI Club UoEm</h1>
+      
+        </div>
+       
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="chat.html"><img src="images/chatbox-ellipses-outline.svg" width="30px"></a></li>
+            </ul>
+        
+        </nav>
+        <section class="forms">
+            <!-- Registration Form Section -->
+        <div id="register" class="form-section">
+            <h2>Register</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                
+                <button type="submit">Submit</button>
+
+            </form>
+            <div class="login-choice">
+                <h4>Already have an account?</h4>
+                <button id="login_switch">Login</button>
+            </div>
+        </div>
+        
+        <!-- Login Form Section -->
+        <div id="login" class="form-section">
+            <h2>Login</h2>
+            <form>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <button type="submit">Login</button>
+
+            </form>
+            <div class="login-choice">
+                <h4>Don't have an account?</h4>
+                <button id="register_switch">Register</button>
+            </div>
+        </div>
+        </section>
+        <script>
+            let registerForm = document.getElementById('register');
+            let loginForm = document.getElementById('login');
+            let loginSwitch = document.getElementById('login_switch');
+            let registerSwitch = document.getElementById('register_switch');
+            loginForm.style.display = 'none'
+
+            loginSwitch.addEventListener('click', ()=>{
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none'
+            })
+
+            registerSwitch.addEventListener('click', ()=>{
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block'
+            })
+        </script>
+</body>
+</html>

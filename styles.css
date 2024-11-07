@@ -13,7 +13,7 @@ body {
 
 /* Navbar styling */
 nav {
-    background: #007bff;
+    background: hsl(234, 95%, 41%);
     /* Navbar background color */
     width: 100%;
     height: 80px;
@@ -63,7 +63,7 @@ nav ul li a {
     border-radius: 3px;
     text-transform: uppercase;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 /* Hover and active link styling */
@@ -147,7 +147,8 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #353333;
+    /* background-color: #353333; */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./images/young3.jpg');
     color: rgb(248, 246, 246);
     text-align: center;
     font-size: 2em;
@@ -268,9 +269,22 @@ nav ul li a:hover {
     /* Darker shade on hover */
 }
 
+/* Form section container style */
+.forms{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./images/young3.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* Form Section Styling */
 .form-section {
-    display: none;
+    /* display: none; */
     /* Hide by default, will show on button click */
     margin: 20px auto;
     /* Centered */
@@ -324,6 +338,27 @@ nav ul li a:hover {
     /* Darker shade on hover */
 }
 
+/* styling for the div below form */
+.login-choice{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.login-choice button{
+    background: none;
+    font-size: large;
+    color: #218838;
+    text-decoration: underline;
+}
+
+.login-choice button:hover{
+    background: transparent;
+    cursor: pointer;
+}
+
 /* Basic image styling */
 img {
     transition: transform 0.3s ease;
@@ -341,114 +376,88 @@ img:hover {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* About Section Styling */
+/* Section Styling */
 #about {
-    padding: 20px;
-    background-color: #f9f9f9;
-    /* Light background for contrast */
+    padding: 40px;
     text-align: center;
+    background-color: #f9f9f9;
 }
 
 #about h2 {
-    text-transform: uppercase;
-    color: #007bff;
-    margin-bottom: 15px;
-    font-size: 2em;
-    /* Larger heading for emphasis */
-}
-
-.about-content {
-    display: flex;
-    justify-content: center;
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
-.about-content p {
-    font-weight: bold;
-    color: black;
-    max-width: 600px;
+#about p {
+    font-size: 1.2em;
     line-height: 1.6;
-    text-align: left;
+    color: #333;
+    margin-bottom: 40px;
 }
 
 /* About Images Layout */
 .about-images {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default 3 columns on large screens */
     gap: 20px;
-    margin-top: 20px;
 }
 
 .about-item {
-    width: 30%;
-    /* 30% width on larger screens */
-    background: white;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
     border-radius: 8px;
-    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .about-item h3 {
-    margin-top: 10px;
-    color: #007bff;
-    font-size: 1.2em;
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .about-item p {
-    margin-top: 5px;
+    font-size: 1em;
     color: #555;
     line-height: 1.5;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .about-item {
-        width: 45%;
-        /* 2 items per row on medium screens */
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
+    /* Adjust the grid layout for tablets */
+    .about-images {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
 }
 
+/* Responsive Design for Mobile Screens */
 @media (max-width: 768px) {
     #about h2 {
-        font-size: 1.5em;
-        /* Slightly smaller heading on tablets */
+        font-size: 2em; /* Smaller title on mobile */
     }
 
-    .about-content p {
-        font-size: 0.9em;
-    }
-
-    .about-item {
-        width: 100%;
-        /* Full width on smaller screens */
+    .about-images {
+        grid-template-columns: 1fr; /* 1 column layout on mobile */
     }
 
     .about-item h3 {
-        font-size: 1.1em;
+        font-size: 1.4em; /* Adjust title size on mobile */
+    }
+
+    .about-item p {
+        font-size: 0.95em; /* Slightly smaller text on mobile */
     }
 }
 
 @media (max-width: 480px) {
-    #about h2 {
-        font-size: 1.2em;
-    }
-
-    .about-content p,
-    .about-item p {
-        font-size: 0.85em;
-    }
-
-    .about-item img {
-        height: 150px;
-        /* Set a max height for images on very small screens */
+    #about p {
+        font-size: 0.9em; /* Even smaller text for very small screens */
     }
 }
 
@@ -532,52 +541,136 @@ img:hover {
 
 /* Centering the blog heading and paragraph */
 .blog-intro {
-    text-align: center;
-    margin-bottom: 30px;
+    background-color: #f1f1f1;  /* Light background color for contrast */
+    padding: 60px 20px;  /* Padding for top, bottom, and sides */
+    text-align: center;  /* Center the text */
+    border-radius: 8px;  /* Rounded corners for a modern look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+    margin-bottom: 40px;  /* Space below the section */
 }
 
-.blog-intro h3,
+.blog-intro h3 {
+    font-size: 2.5em;  /* Larger heading size */
+    color: #ff9100;  /* Blue color for emphasis */
+    margin-bottom: 20px;  /* Space below the heading */
+    text-transform: uppercase;  /* All caps for the heading */
+    letter-spacing: 2px;  /* Spacing between letters */
+    font-weight: bold;  /* Bold text */
+}
+
 .blog-intro p {
-    margin: 10px 0;
-    color: #333;
+    font-size: 1.2em;  /* Slightly larger text for the paragraph */
+    color: #555;  /* Dark gray color */
+    max-width: 700px;  /* Maximum width for the text */
+    margin: 0 auto;  /* Center the text */
+    line-height: 1.6;  /* Increase line spacing for readability */
+    font-weight: 300;  /* Lighter weight for contrast with the heading */
 }
 
-/* Grid gallery layout */
+/* Hover Effect for the section */
+.blog-intro:hover {
+    background-color: #e9ecef;  /* Light background on hover */
+    transition: background-color 0.3s ease;  /* Smooth transition for the hover effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .blog-intro h3 {
+        font-size: 2em;  /* Slightly smaller heading on smaller screens */
+    }
+
+    .blog-intro p {
+        font-size: 1em;  /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-intro h3 {
+        font-size: 1.6em;  /* Even smaller heading on very small screens */
+    }
+
+    .blog-intro p {
+        font-size: 0.9em;  /* Adjust paragraph size further */
+    }
+}
+
+
+/* Blog Gallery Section Styling */
 .blog-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* 8 equal columns */
-    width: 100vw;
-    /* Full viewport width */
-    gap: 20px;
-    /* Space between items */
-    padding: 10px 0;
+    padding: 40px 20px;
+    background-color: #f4f4f4; /* Light grey background for contrast */
+}
+
+.blog-gallery h2 {
+    text-align: center;
+    color: #000408;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .blog-item {
-    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+    width: 100%;
 }
 
-.blog-item h4 {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 5px;
+.blog-item:hover {
+    transform: translateY(-5px); /* Hover effect for interactivity */
 }
 
 .blog-item img {
     width: 100%;
-    /* Full width within each grid cell */
     height: auto;
-    /* Maintain aspect ratio */
     border-radius: 8px;
-    /* Optional: rounded corners */
+    margin-bottom: 15px;
+}
+
+.blog-item h4 {
+    color: #007bff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .blog-item p {
-    font-size: 0.9em;
     color: #555;
-    margin-top: 5px;
+    line-height: 1.6;
+    font-size: 1em;
 }
+
+/* Blog Gallery Layout */
+.blog-gallery-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .blog-gallery-content {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-gallery-content {
+        grid-template-columns: 1fr; /* 1 item per row on mobile */
+    }
+
+    .blog-item h4 {
+        font-size: 1.2em;
+    }
+
+    .blog-item p {
+        font-size: 0.9em;
+    }
+}
+
 
 /* Centering the intro heading and paragraph */
 .contact-intro {
@@ -633,6 +726,213 @@ img:hover {
     border: 0;
     /* Remove default border */
 }
+
+/* Main container for the Purpose section */
+.purpose-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 40px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Styling for each half */
+.purpose-block {
+    width: 48%; /* Leave slight space between */
+}
+
+/* Image styling */
+.purpose-block img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Text styling */
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1em;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 768px) {
+    .purpose-section {
+        flex-direction: column;
+    }
+
+    .purpose-block {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+       /* Main container for the Core Values section */
+       .core-values-section {
+        width: 100%;
+        padding: 40px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    /* Title styling */
+    .core-values-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+        color: hsl(234, 95%, 41%);
+    }
+
+    /* Grid layout for core values */
+    .core-values-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        gap: 30px; /* Larger gap between blocks */
+    }
+
+    /* Individual core value block styling */
+    .core-value {
+        background-color: #ffffff;
+        padding: 30px; /* Larger padding for each block */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    /* Hover effect for core value blocks */
+    .core-value:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Heading for each core value */
+    .core-value h3 {
+        font-size: 1.3em;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    /* Text for each core value */
+    .core-value p {
+        font-size: 1em;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .core-values-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .core-values-grid {
+            grid-template-columns: 1fr; /* 1 column for mobile */
+        }
+    }
+        /* Main container for the Our Impact section */
+        .impact-section {
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Topic Title Styling */
+        .impact-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: hsl(234, 95%, 41%);
+        }
+
+        /* Banner Styling */
+        .impact-banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 40px;
+        }
+
+        /* Description on the left of the banner */
+        .impact-description {
+            width: 50%;
+            font-size: 1.2em;
+            color: #333;
+            padding-right: 20px;
+        }
+
+        /* Image on the right of the banner */
+        .impact-image {
+            width: 40%;
+            height: 100%;
+            background-image: url('https://via.placeholder.com/600x300'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        /* SDG Images Row */
+        .sdgs-row {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Individual SDG image block styling */
+        .sdg-image {
+            width: 12%; /* Adjust this to fit all 7 images in one line */
+            height: auto;
+        }
+
+        .sdg-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .impact-banner {
+                flex-direction: column; /* Stack description and image vertically on tablets */
+                height: auto;
+            }
+            .impact-description {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .impact-image {
+                width: 100%;
+                height: 250px; /* Adjust image height on tablets */
+            }
+            .sdgs-row {
+                flex-wrap: wrap; /* Allow SDG images to wrap on smaller screens */
+                justify-content: center;
+            }
+            .sdg-image {
+                width: 20%; /* Make SDG images larger on tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .impact-description {
+                font-size: 1em; /* Smaller font size on mobile */
+            }
+            .sdgs-row {
+                justify-content: center; /* Center SDG images on mobile */
+            }
+            .sdg-image {
+                width: 25%; /* Adjust image size for small screens */
+            }
+        }
+    
 
 /* Footer Styling */
 footer {
@@ -843,7 +1143,6 @@ body {
 
 .chat-input input {
     flex: 1;
-    /* Allow input to grow */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
