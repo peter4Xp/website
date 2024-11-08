@@ -330,14 +330,6 @@ img:hover {
     grid-template-columns: repeat(3, 1fr); /* Default 3 columns on large screens */
     gap: 20px;
 }
-
-.about-item {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .about-item img {
     width: 100%;
     height: auto;
@@ -359,7 +351,6 @@ img:hover {
 
 /* Responsive Design for Tablets */
 @media (max-width: 1024px) {
-    /* Adjust the grid layout for tablets */
     .about-images {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
@@ -389,6 +380,7 @@ img:hover {
         font-size: 0.9em; /* Even smaller text for very small screens */
     }
 }
+
 
 #club-officials {
     padding: 20px;
@@ -1239,7 +1231,6 @@ footer {
     }
 }
 
-
 /* Our Impact Section */
 .impact {
     background-color: #f9f9f9;
@@ -1256,6 +1247,7 @@ footer {
     display: flex;
     justify-content: space-around;
     gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .stat {
@@ -1264,6 +1256,8 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 200px;
+    flex: 1 1 200px; /* Makes stats flexible to shrink/grow */
+    max-width: 300px; /* Sets max width for larger screens */
 }
 
 .stat h3 {
@@ -1279,7 +1273,7 @@ footer {
 /* Join Us Section */
 .join {
     background: linear-gradient(
-        rgba(255, 255, 255, 0.1), /* Lighter gradient */
+        rgba(255, 255, 255, 0.1), 
         rgba(255, 255, 255, 0.1)
       ),
       url('images/sdg%20banner.png');
@@ -1291,7 +1285,6 @@ footer {
     border-radius: 20px;
     margin-bottom: 50px;
 }
-
 
 .join h2 {
     font-size: 2.5em;
@@ -1313,30 +1306,57 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .impact h2, .join h2 {
+        font-size: 2em; /* Reduce heading size on tablets */
+    }
+    .impact-stats {
+        gap: 15px; /* Reduce gap between stats on tablets */
+    }
+}
+
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    .events h2,
-    .testimonials h2,
-    .impact h2,
-    .join h2 {
-        font-size: 2em;
-    }
-
-    .events-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .testimonial-slider {
-        flex-direction: column;
+    .impact-stats {
+        flex-direction: column; /* Stack stats vertically on smaller screens */
+        align-items: center;
     }
 
     .stat {
-        width: 150px;
+        width: 80%; /* Make stats wider on mobile */
+        max-width: none; /* Remove max-width restriction */
+        padding: 20px;
+    }
+
+    .impact h2, .join h2 {
+        font-size: 2em;
+    }
+
+    .join p {
+        font-size: 1em;
+    }
+
+    .cta-btn {
+        font-size: 1em;
+        padding: 8px 25px;
     }
 }
+
+@media (max-width: 480px) {
+    .impact h2, .join h2 {
+        font-size: 1.8em;
+    }
+
+    .join p {
+        font-size: 0.95em;
+    }
+
+    .cta-btn {
+        font-size: 0.9em;
+        padding: 8px 20px;
+    }
+}
+
+
 /* Back to Top Button Styles */
 .back-to-top {
     position: fixed;
@@ -1359,3 +1379,5 @@ footer {
 .back-to-top:hover {
     background-color: #0d0d0e;
 }
+
+
