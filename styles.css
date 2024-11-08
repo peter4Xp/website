@@ -35,10 +35,12 @@ nav {
     /* Center align vertically */
     gap: 10px;
     /* Space between logo and title */
+    background-color: #ccc;
+    border-radius: 10px;
 }
 
 .logo {
-    width: 50px;
+    width: 75px;
     /* Adjust width as needed */
     height: auto;
 }
