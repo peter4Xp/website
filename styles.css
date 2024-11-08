@@ -381,65 +381,99 @@ img:hover {
     }
 }
 
-
+/* Section Styling */
 #club-officials {
     padding: 20px;
     background-color: #f1f1f1;
-    /* Light background for contrast */
     text-align: center;
-    /* Center-align text */
 }
 
 #club-officials h2 {
     text-transform: uppercase;
-    /* Convert text to uppercase */
     color: #007bff;
-    /* Set heading color to blue */
     margin-bottom: 15px;
-    /* Add space below the heading */
 }
 
+/* Flexbox Layout for Officials */
 .officials-images {
     display: flex;
-    /* Use flexbox to align images horizontally */
-    justify-content: space-around;
-    /* Space out images evenly */
-    flex-wrap: wrap;
-    /* Wrap if screen is too small */
-    margin-top: 20px;
-    gap: 20px;
-    /* Space above the image section */
+    justify-content: center;
+    flex-wrap: nowrap; /* Keep items in a single row */
+    gap: 90px;
+    overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+    padding-bottom: 10px; /* Space for scrolling indicator */
 }
 
+/* Individual Official Item */
 .official-item {
-    width: 30%;
-    /* Each item takes 30% of the container */
-    margin: 10px;
-    /* Space between items */
+    flex: 1 1 100px; /* Flexible width with a minimum size */
+    max-width: 150px; /* Limit max size for a compact look */
+    margin: 0 10px;
+    text-align: center;
 }
 
+/* Image Styling */
 .official-item img {
     width: 100%;
-    /* Full width of the item */
-    height: auto;
-    /* Maintain aspect ratio */
+    height: 120px; /* Uniform height */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
     border-radius: 8px;
-    /* Optional: rounded corners for images */
 }
 
+/* Text Styling */
 .official-item h3 {
     margin-top: 10px;
-    /* Space above headings */
     color: #007bff;
-    /* Heading color */
+    font-size: 1em;
 }
 
 .official-item p {
     margin-top: 5px;
-    /* Space above descriptions */
     color: #555;
-    /* Description color */
+    font-size: 0.9em;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .officials-images {
+        justify-content: flex-start; /* Align items to the start for smaller screens */
+    }
+    
+    #club-officials h2 {
+        font-size: 1.8em;
+    }
+
+    .official-item {
+        max-width: 120px; /* Smaller size on tablets */
+    }
+
+    .official-item img {
+        height: 100px; /* Smaller image height on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    #club-officials h2 {
+        font-size: 1.5em; /* Smaller title size on mobile */
+    }
+
+    .official-item {
+        max-width: 100px; /* Further reduce item width on small screens */
+    }
+
+    .official-item img {
+        height: 80px; /* Smaller image height for compact view */
+    }
+
+    .official-item h3 {
+        font-size: 0.9em;
+    }
+
+    .official-item p {
+        font-size: 0.8em;
+    }
+}
+
 
 .chat-container {
     border: 1px solid #ccc;
@@ -680,6 +714,8 @@ h2 {
 
 p {
     font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
 }
 
 /* Responsive styling for mobile devices */
